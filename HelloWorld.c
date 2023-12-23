@@ -1,15 +1,22 @@
 #include <stdio.h>
+#include <math.h>
 
 int main(){
 
-    char name[25];
-    printf("What is your name? ");
-    fgets(name,25,stdin); 
+    const double PI = 3.14159;
+    double radius;
+    double circumference;
+    double area;
 
+    printf("What is the radius of the circle? ");
+    scanf("%lf",&radius);
 
-    float cost;
-    printf("How much did you pay? ");
-    scanf("%f",&cost);
+    circumference = 2*PI*radius;
+    area = PI*pow(radius,2);
 
-    printf("Hello %s ,Thanks for paying $%.2f",name,cost);
+    printf("circumference:%lf",circumference);
+    printf("area: %lf",area);
+
+   return 0;
 }
+
