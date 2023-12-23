@@ -1,22 +1,33 @@
 #include <stdio.h>
-#include <math.h>
+#include <ctype.h>
 
 int main(){
+    char unit;
+    float temp;
 
-    const double PI = 3.14159;
-    double radius;
-    double circumference;
-    double area;
+    printf("Is the temperature in (F) or (C)");
+    scanf("%c", &unit);
 
-    printf("What is the radius of the circle? ");
-    scanf("%lf",&radius);
+    unit = toupper(unit);
 
-    circumference = 2*PI*radius;
-    area = PI*pow(radius,2);
+    if(unit == 'C'){
+        printf("Enter the temperature in Celcius ");
+        scanf("%f", &temp);
+        temp = (temp*1.8) + 32;
+        printf("%f", temp);
+    }
+    else if(unit == 'F'){
+        printf("Enter the temperature in Farenheit ");
+        scanf("%f", &temp);
+        temp = (temp-32)/1.8 ;
+        printf("%f", temp);
 
-    printf("circumference:%lf",circumference);
-    printf("area: %lf",area);
+    }
 
-   return 0;
+    else{
+        printf("Please enter valid unit");
+    };
+
+    return 0;
 }
 
