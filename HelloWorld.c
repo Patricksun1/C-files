@@ -1,32 +1,42 @@
 #include <stdio.h>
-#include <ctype.h>
+#include <math.h>
 
 int main(){
-    char unit;
-    float temp;
+    char operator;
+    double num1;
+    double num2;
+    double result;
 
-    printf("Is the temperature in (F) or (C)");
-    scanf("%c", &unit);
+    printf("Enter an operator: ");
+    scanf("%c",&operator);
 
-    unit = toupper(unit);
+    printf("Enter Number 1: ");
+    scanf("%lf",&num1);
 
-    if(unit == 'C'){
-        printf("Enter the temperature in Celcius ");
-        scanf("%f", &temp);
-        temp = (temp*1.8) + 32;
-        printf("%f", temp);
+    printf("Enter Number 2: ");
+    scanf("%lf",&num2);
+
+    switch(operator){
+        case '+':
+        result = num1 + num2;
+        printf("%lf",result);
+        break;
+        case '-':
+        result = num1 - num2;
+        printf("%lf",result);
+        break;
+        case '*':
+        result = num1 * num2;
+        printf("%lf",result);
+        break;
+        case '/' :
+        result = num1 / num2;
+        printf("%lf",result);
+        break;
+        default:
+        printf("Case is not valid, please retry");
     }
-    else if(unit == 'F'){
-        printf("Enter the temperature in Farenheit ");
-        scanf("%f", &temp);
-        temp = (temp-32)/1.8 ;
-        printf("%f", temp);
 
-    }
-
-    else{
-        printf("Please enter valid unit");
-    };
 
     return 0;
 }
