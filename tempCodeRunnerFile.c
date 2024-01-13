@@ -1,1 +1,1 @@
-    return 0;
+    strncat(firstName,lastName,2);
