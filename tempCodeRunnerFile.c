@@ -1,1 +1,1 @@
-    strncat(firstName,lastName,2);
+printf("\n");
