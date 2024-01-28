@@ -123,8 +123,6 @@ int main(void) {
 }
 */
 
-#include <stdio.h>
-#include <string.h>
 
 
 /*int main(){
@@ -234,24 +232,35 @@ int main(void){
     
     return 0;
 }*/
-struct Player{
-    char name[12];
-    int score;
-};
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
 
 int main(){
-    struct Player player1;
-    struct Player player2;
+int size;
+int row = 0;
+int column = 0;
 
-    strcpy(player1.name,"Patrick");
-    player1.score = 4;
-    strcpy(player2.name,"bot");
-    player2.score = 5;
+printf("Enter size: ");
+scanf("%d",&size);
+
+for(int row = 0;row<size;row++){
+    for(int column = 0; column<size;column++){
+        if(column == row || row == size -column -1){
+            printf("*");
+        }
+        else{
+            printf("-");
+        }
+     
+        }
+        printf("\n");
+
+    }
 
 
-    printf("%s\n",player1.name);
-    printf("%d\n",player1.score);
-     printf("%s\n",player2.name);
-    printf("%d\n",player2.score);
-    return 0;
+
+return 0;
 }
