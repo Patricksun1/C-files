@@ -234,30 +234,24 @@ int main(void){
     
     return 0;
 }*/
-void sort(int array[],int size){
-        for(int j = 0;j<size-1;j++){
-            if(array[j]>array[j+1]){
-                int temp = array[j+1];
-                array[j+1]=array[j];
-                array[j]=temp;
-            }
-        }
-    }
-
-
-void printArray(int array[],int size){
-    for(int i =0;i<size;i++){
-        printf("%c ",array[i]);
-    }
-}
-
+struct Player{
+    char name[12];
+    int score;
+};
 
 int main(){
-    int array[] = {'A','a','B','F'};
-    int size = sizeof(array)/sizeof(array[0]);
+    struct Player player1;
+    struct Player player2;
 
-    sort(array,size);
-    printArray(array,size);
+    strcpy(player1.name,"Patrick");
+    player1.score = 4;
+    strcpy(player2.name,"bot");
+    player2.score = 5;
 
+
+    printf("%s\n",player1.name);
+    printf("%d\n",player1.score);
+     printf("%s\n",player2.name);
+    printf("%d\n",player2.score);
     return 0;
 }
