@@ -1,4 +1,4 @@
-
+#include <stdio.h>
 
 
 /*int main(){
@@ -232,11 +232,10 @@ int main(void){
     
     return 0;
 }*/
-
+/*
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
-#include <ctype.h>
+
 
 int main(){
 int size;
@@ -263,4 +262,39 @@ for(int row = 0;row<size;row++){
 
 
 return 0;
+}
+*/
+
+int main(){
+    int n;
+    printf("What number would you like to see: ");
+    scanf("%d",&n);
+    for(int k=0;k<n;k++){
+        k* printf("*");
+    }
+    printf("\n");
+    while(n>2){
+    if(n%2==0){
+        n = n/2;
+        for(int i=0;i<n;i++){
+        i*printf("*");
+        
+        }
+         printf("\n");
+       
+    }
+    else{
+        n = 3*n +1;
+        for(int j=0;j<n;j++){
+        j*printf("*");
+             
+    }
+        printf("\n");
+    }
+    }
+   
+    
+
+    
+    return 0;
 }
