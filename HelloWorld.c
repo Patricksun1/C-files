@@ -350,6 +350,7 @@ int main(){
 int main(){
 
 char msg[4];
+char ed;
 int n1;
 int n2;
 int n3;
@@ -359,7 +360,15 @@ int n4;
 
 printf("Message: ");
 scanf("%s",msg);
-printf("Would you like to encipher or decipher this message");
+
+fflush(stdin);
+
+printf("Would you like to encipher or decipher this message (e/d)? ");
+scanf("%c",&ed);
+
+
+if(ed == 'e'){
+
 printf("Enter numbers to encipher by: ");
 scanf("%d %d %d %d",&n1,&n2,&n3,&n4);
 
@@ -369,6 +378,23 @@ msg[2]= msg[2]+n3;
 msg[3]= msg[3]+n4;
 
 printf("%s",msg);
+}
 
+else if(ed == 'd'){
+printf("Enter numbers to decipher by: ");
+scanf("%d %d %d %d",&n1,&n2,&n3,&n4);
+
+msg[0]= msg[0]-n1;
+msg[1]= msg[1]-n2;
+msg[2]= msg[2]-n3;
+msg[3]= msg[3]-n4;
+
+printf("%s",msg);
+
+}
+
+else{
+    printf("Invalid response");
+}
 return 0;
 }
