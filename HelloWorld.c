@@ -265,8 +265,9 @@ return 0;
 }
 */
 
-int main(){
+/*int main(){
     int n;
+    char c ="*";
     printf("What number would you like to see: ");
     scanf("%d",&n);
     for(int k=0;k<n;k++){
@@ -296,5 +297,69 @@ int main(){
     
 
     
+    return 0;
+}*/
+
+
+/*int main(){
+    int n;
+    printf("Enter number: ");
+    scanf("%d",&n);
+
+    if(n>0){
+    for(int i=0;i<=n;i++){
+        printf("%d\n",i);
+    }
+    }
+    else if(n<0){
+        for(int j=0;j>=n;j--){
+            printf("%d\n",j);
+        }
+    }
+
+
+
+    return 0;
+}*/
+
+#include <stdio.h>
+/*
+int main(){
+    int sum;
+    int n1;
+    int n2;
+    int n3;
+    int n4;
+    int n5;
+    int n6;
+    int n7;
+    int n8;
+    int n9;
+    int n10;
+    printf("Enter numbers: ");
+    scanf("%d %d %d %d %d %d %d %d %d %d",&n1,&n2,&n3,&n4,&n5,&n6,&n7,&n8,&n9,&n10);
+
+    sum = n1+n2+n3+n4+n5+n6+n7+n8+n9+n10;
+
+    printf("The sum of dice rolls is %d",sum);
+    
+
+    return 0;
+}*/
+
+int main(){
+    int size;
+    printf("Enter size: ");
+    scanf("%d",&size);
+
+    for(int i=0;i<size;i++){
+        for(int j=0;j<size;j++){
+
+            printf("(%d,%d)",i,j);
+
+        }
+        printf("\n");
+    }
+
     return 0;
 }
