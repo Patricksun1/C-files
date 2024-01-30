@@ -348,18 +348,27 @@ int main(){
 }*/
 
 int main(){
-    int size;
-    printf("Enter size: ");
-    scanf("%d",&size);
 
-    for(int i=0;i<size;i++){
-        for(int j=0;j<size;j++){
+char msg[4];
+int n1;
+int n2;
+int n3;
+int n4;
 
-            printf("(%d,%d)",i,j);
 
-        }
-        printf("\n");
-    }
 
-    return 0;
+printf("Message: ");
+scanf("%s",msg);
+printf("Would you like to encipher or decipher this message");
+printf("Enter numbers to encipher by: ");
+scanf("%d %d %d %d",&n1,&n2,&n3,&n4);
+
+msg[0]= msg[0]+n1;
+msg[1]= msg[1]+n2;
+msg[2]= msg[2]+n3;
+msg[3]= msg[3]+n4;
+
+printf("%s",msg);
+
+return 0;
 }
