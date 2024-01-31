@@ -347,7 +347,7 @@ int main(){
     return 0;
 }*/
 
-int main(){
+/*int main(){
 
 char msg[4];
 char ed;
@@ -397,4 +397,111 @@ else{
     printf("Invalid response");
 }
 return 0;
+}
+*/
+
+/*int is_vowel(char character){
+    if(character == 'a' ||
+    character == 'e' ||
+    character == 'i' ||
+    character == 'o' ||
+    character == 'u'){
+        return 0;
+    }
+    
+
+}
+
+
+int main(){
+    char character;
+    printf("Input: ");
+    while(scanf("%c",&character) == 1){
+
+        if(is_vowel(character)!=0){
+            printf("%c",character);
+        }
+    }
+
+    return 0;
+}*/
+
+
+// Prints the first n digits of pi, where n is specified 
+// by the user
+/*
+#include <stdio.h>
+
+#define MAX_DIGITS 10
+
+void print_pi_style(int num_digits);
+
+int main(void) {
+    // DO NOT EDIT CODE HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    printf("How many digits of pi would you like to print? ");
+    int digits;
+    scanf("%d", &digits);
+    print_pi_style(digits);
+
+    return 0;
+    // DO NOT EDIT CODE HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+}
+
+void print_pi_style(int num_digits) {
+    // DO NOT CHANGE THIS LINE
+    int pi[MAX_DIGITS] = {3, 1, 4, 1, 5, 9, 2, 6, 5, 3};
+    // TODO: Finish this function below
+    int i=0;
+   while(i<num_digits){
+    if(i==1){
+        printf(".");
+    }
+        printf("%d",pi[i]);
+        i++;
+    }
+}*/
+
+#define MAX 100
+
+void print_array_minmax(int length, int numbers[MAX]);
+
+
+int main(){
+    int num;
+    int num_array[MAX] = {};
+    printf("How many numbers: ");
+    scanf("%d",&num);
+    fflush(stdin);
+    printf("Please enter numbers: ");
+    for(int i=0;i<num;i++){
+    scanf("%d",&num_array[i]);
+    }
+
+    print_array_minmax(num,num_array);
+
+
+
+    return 0;
+}
+
+void print_array_minmax(int length, int numbers[MAX]) {
+    int index = 0;
+    if (length > 0) {
+        int minimum = numbers[index];
+        int maximum = numbers[index];
+
+        while (index < length) {
+            if (numbers[index] < minimum) {
+                minimum = numbers[index];
+            } else if (numbers[index] > maximum) {
+                maximum = numbers[index];
+            }
+            
+            index++;
+        }
+
+        printf("Minimum: %d\nMaximum: %d\n", minimum, maximum);
+    }
+    
+    return;
 }
