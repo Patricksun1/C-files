@@ -460,7 +460,7 @@ void print_pi_style(int num_digits) {
         i++;
     }
 }*/
-
+/*
 #define MAX 100
 
 void print_array_minmax(int length, int numbers[MAX]);
@@ -504,4 +504,41 @@ void print_array_minmax(int length, int numbers[MAX]) {
     }
     
     return;
+}
+*/
+
+#define MAX_LENGTH 100
+
+void minmax(int length,int number_array[MAX_LENGTH]){
+int index =0;
+int min = number_array[0];
+int max = number_array[0];
+
+while(index<length){
+if(number_array[index]<min){
+   min = number_array[index];
+}
+else if(number_array[index]>max){
+    max =  number_array[index] ;
+}
+index++;
+}
+printf("Minimum: %d\nMaximum: %d\n",min,max);
+}
+
+int main(){
+    int length;
+    int number_array[MAX_LENGTH];
+
+
+
+    printf("How many numbers: ");
+    scanf("%d",&length);
+    fflush(stdin);
+    printf("Please enter numbers: ");
+    for(int i=0;i<length;i++){
+    scanf("%d",&number_array[i]);
+    }
+    minmax(length,number_array);
+    return 0;
 }
