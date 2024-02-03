@@ -250,7 +250,7 @@ for(int row = 0;row<size;row++){
         if(column == row || row == size -column -1){
             printf("*");
         }
-        else{
+/        else{
             printf("-");
         }
      
@@ -581,6 +581,7 @@ int main(){
 }
 */
 
+/*
 #define MAX_POINTS 100
 struct points{
     double x;
@@ -612,6 +613,103 @@ int main(){
 void print_point(int number_of_points,double x,double y){
     printf("%d: x = %lf, y = %lf",number_of_points,x,y);
 }
+*/
+/*
+#define COOKING_TIME 15
+#define COOKING_TIME 15
+#define PANCAKES_PER_PAN 4
+
+// TODO: Write function prototypes
+double divide(double num1,double num2);
+int ceiling(double num1);
+void print_time(int minutes);
 
 
+
+// TODO: Write divide function
+double divide(double num1,double num2){
+double result = num1/num2;
+return result;
+}
+
+// TODO: Write ceiling function
+int ceiling(double num1){
+    int new_num = num1;
+    if(new_num<num1){
+    int new_num = num1 + 1;
+    return new_num;}
+    else{
+    return num1;}
+}
+
+// TODO: Write print_time function
+void print_time(int minutes){
+int hours = minutes/60;
+int mins = minutes - (hours*60);
+
+printf("%d hours and %d minutes",hours,mins);
+}
+
+//////////////// vvv DO NOT EDIT MAIN vvv //////////////////
+
+int main(void) {
+
+    printf("How many souffle pancakes do you want to make? ");
+    int pancakes;
+    scanf("%d", &pancakes);
+  
+    // for 3 pancakes, we need 2 eggs!
+    double eggs_decimal = pancakes * divide(2, 3);
+    // but we can't have part of an egg, so lets use ceiling
+    int eggs = ceiling(eggs_decimal);
+
+    int sugar_grams = pancakes * 10;
+    int flour_grams = pancakes * 8;
+
+    printf("You will need:\n");
+    printf("- %d eggs\n", eggs);
+    printf("- %dg sugar\n", sugar_grams);
+    printf("- %dg flour\n", flour_grams);
+
+    // also using ceiling for frying sessions as if we have 1 pancake left
+    // it still needs the same time as full pan of pancakes.
+    int frying_sessions = ceiling(divide(pancakes, PANCAKES_PER_PAN));
+    int minutes = frying_sessions * COOKING_TIME;
+
+    printf("Frying will take you ");
+    print_time(minutes);
+    printf(".\n");
+
+    return 0;
+}
+
+//////////////// ^^^ DO NOT EDIT MAIN ^^^ //////////////////
+*/
+#include <math.h>
+
+int main(){
+    char operation;
+    int square;
+    int power_base;
+    int power_upper;
+    printf("Enter instruction: ");
+    scanf(" %c",&operation);
+    if(operation == 's'){
+        scanf("%d",&square);
+        int result = pow((square),2);
+        printf("%d\n",result);
+    }
+    else if(operation == 'p'){
+        scanf("%d %d",&power_base,&power_upper);
+            
+        int result =  pow(power_base,power_upper);
+
+        printf("%d\n",result);
+    }
+    else{
+        printf("Please enter valid operation");
+    }
+
+    return 0;
+}
 

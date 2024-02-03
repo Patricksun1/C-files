@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 int main(){
-    for(int i=0;i<3;i++)
-    i*printf("*");
-
-
+    double num1 = 2.2;
+    int num2 = 1;
+    int result = num1 + 1;
+   printf("%d",result);
     return 0;
 }
