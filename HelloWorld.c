@@ -696,14 +696,15 @@ int main(){
     scanf(" %c",&operation);
     if(operation == 's'){
         scanf("%d",&square);
-        int result = pow((square),2);
+        int result = square*square;
         printf("%d\n",result);
     }
     else if(operation == 'p'){
         scanf("%d %d",&power_base,&power_upper);
-            
-        int result =  pow(power_base,power_upper);
-
+        int result = 1 ;
+        for(int i=0;i<power_upper;i++){
+        result = result*power_base; 
+        }
         printf("%d\n",result);
     }
     else{
