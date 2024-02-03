@@ -506,7 +506,7 @@ void print_array_minmax(int length, int numbers[MAX]) {
     return;
 }
 */
-
+/*
 #define MAX_LENGTH 100
 
 void minmax(int length,int number_array[MAX_LENGTH]){
@@ -542,3 +542,76 @@ int main(){
     minmax(length,number_array);
     return 0;
 }
+*/
+/*
+#define MAX 100
+
+void minmax(int length,int num_array[MAX]){
+int index = 0;
+int min = num_array[index];
+int max = num_array[index];
+
+while(index<length){
+    if(min>num_array[index]){
+        min = num_array[index];
+    }
+    else if(max<num_array[index]){
+        max = num_array[index];
+    }
+index++;
+}
+
+printf("Minimum: %d\nMaximum: %d\n",min,max);
+
+}
+
+int main(){
+    int length;
+    int num_array[MAX];
+    printf("How many numbers: ");
+    scanf("%d",&length);
+    fflush(stdin);
+    printf("Please enter numbers: ");
+    for(int i=0;i<length;i++){
+    scanf("%d",&num_array[i]);}
+
+    minmax(length,num_array);
+
+    return 0;
+}
+*/
+
+#define MAX_POINTS 100
+struct points{
+    double x;
+    double y;
+};
+
+void print_point(int number_of_points,double x,double y);
+
+int main(){
+    struct points point_array[MAX_POINTS];
+    int number_of_points;
+    int i=0;
+    printf("How many points in the shape? ");
+    scanf("%d",&number_of_points);
+    fflush(stdin);
+    printf("Enter points: \n");
+    while(i<number_of_points){
+    scanf("%lf %lf",&point_array[i].x,&point_array[i].y);
+    i++;
+    }
+    for(int j=0;j<number_of_points;j++){
+    print_point(j+1,point_array[j].x,point_array[j].y);
+    printf("\n");
+    }
+
+    return 0;
+}
+
+void print_point(int number_of_points,double x,double y){
+    printf("%d: x = %lf, y = %lf",number_of_points,x,y);
+}
+
+
+
