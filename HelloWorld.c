@@ -685,6 +685,7 @@ int main(void) {
 
 //////////////// ^^^ DO NOT EDIT MAIN ^^^ //////////////////
 */
+/*
 #include <math.h>
 
 int main(){
@@ -713,4 +714,21 @@ int main(){
 
     return 0;
 }
+*/
+#include <string.h>
 
+int main(){
+    char word[20];
+    printf("Input word: ");
+    fgets(word,20,stdin);
+
+    printf("Word square is:\n");
+    for(int i=1;i<strlen(word);i++){
+        
+        printf("%s",word);
+    }
+
+
+
+    return 0;
+}
