@@ -715,20 +715,104 @@ int main(){
     return 0;
 }
 */
+/*
 #include <string.h>
+#include <ctype.h>
 
-int main(){
-    char word[20];
-    printf("Input word: ");
-    fgets(word,20,stdin);
+#define MAX_STRING_LENGTH 1024
 
-    printf("Word square is:\n");
-    for(int i=1;i<strlen(word);i++){
-        
-        printf("%s",word);
+//////////////// DO NOT CHANGE ANY OF THE CODE BELOW HERE //////////////////
+void make_alternating(char string[MAX_STRING_LENGTH]);
+
+int main (void) {
+    //You don't need to understand this code to complete the exercise.
+
+    //Scans in a string from the user.
+    char buffer[MAX_STRING_LENGTH];
+    fgets(buffer, MAX_STRING_LENGTH, stdin);
+
+    // Runs your function
+    make_alternating(buffer);
+
+    // Prints resulting string.
+    printf("%s", buffer);
+
+    return 0;
+}
+//////////////// DO NOT CHANGE ANY OF THE CODE ABOVE HERE //////////////////
+
+////////////////////////////////////////////////////////////////////////////
+///////////////////// ONLY WRITE CODE BELOW HERE ///////////////////////////
+////////////////////////////////////////////////////////////////////////////
+
+// Modifies `string` so that the first letter is converted to lowercase, 
+// and the case of each following letter alternates.
+// i.e. in the resulting string: 
+//      the first letter is lowercase, 
+//      second letter is uppercase, 
+//      third letter is lower case, 
+//      etc.
+//
+// e.g.: "Hello" -> "hElLo"
+void make_alternating(char string[MAX_STRING_LENGTH]) {
+    
+
+    int letter_counter = 0;
+
+    for(int i=0;string[i] != '\0';i++) {
+        if (isalpha(string[i])) {
+            if (letter_counter % 2 == 0) {
+                string[i] = tolower(string[i]);
+            } else {
+                string[i] = toupper(string[i]);
+            }
+            letter_counter++;
+        }
+    }
+}
+////////////////////////////////////////////////////////////////////////////
+///////////////////// ONLY WRITE CODE ABOVE HERE ///////////////////////////
+////////////////////////////////////////////////////////////////////////////
+
+*/
+
+
+#include <stdlib.h>
+#include <time.h>
+
+
+#define MIN 1;
+#define MAX 100;
+
+
+int main(void){
+    srand(time(0));
+    int guess;
+    int num_guesses;
+    int answer = rand()%100 +1;
+
+   
+    
+    do{
+        printf("Enter a guess: ");
+        scanf("%d",&guess);
+        if(guess>answer){
+            printf("Too high!\n");
+        }
+        else if(guess<answer){
+            printf("Too Low!\n");
+        }
+    num_guesses++;
+    }while(guess!=answer);
+
+    if(guess==answer){
+    printf("CORRECT!\n");
+    printf("************************\n");
+    printf("answer: %d\n",answer);
+    printf("guesses: %d\n", num_guesses);
+    printf("************************\n");
     }
 
-
-
+   
     return 0;
 }
